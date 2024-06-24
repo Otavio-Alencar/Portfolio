@@ -6,7 +6,7 @@ export const Page = ()=>{
   return(
     <>
     <Header/>
-    <div className="min-h-screen container mx-auto">
+    <div className="min-h-screen md:container mx-9 md:mx-auto">
       <Home/>
       <Projects/>
     </div>
