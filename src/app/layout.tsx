@@ -3,7 +3,7 @@ import { Inter as FontSans } from "next/font/google"
 import "./globals.css";
 import {Montserrat} from "next/font/google"
 import { cn } from "@/lib/utils"
- 
+import { ThemeProvider } from "@/components/theme-provider"
 const mainFontFamily = Montserrat({
   weight: ['300', '400', '700'],
   subsets: ["latin"],
@@ -17,7 +17,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={mainFontFamily.variable}>
-      <body >{children}</body>
+      <body >
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </body>
     </html>
   );
 }

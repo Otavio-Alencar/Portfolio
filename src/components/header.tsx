@@ -1,4 +1,5 @@
 import MenuIcon from '@mui/icons-material/Menu';
+import { ModeToggle } from './toggle-theme';
 export const Header = ()=>{
     return(
         <header className="fixed bg-white left-0 top-0 w-full">
@@ -6,13 +7,15 @@ export const Header = ()=>{
                 <div className="text-primary-color">
                     OalencarDev
                 </div>
-                <ul className=" gap-8 text-primary-color hidden md:flex">
+                <ul className=" gap-8 text-primary-color hidden lg:flex items-center">
                         <li>Inicio</li>
                         <li>Projetos</li>
                         <li>Sobre mim</li>
-                        <li>Contato</li>
+                        <li>Contato</li> 
+                        <ModeToggle></ModeToggle>
                  </ul>
-                 <div className='md:hidden'>
+                
+                 <div className='lg:hidden'>
                     <MenuIcon/>
                  </div>
             </div>
