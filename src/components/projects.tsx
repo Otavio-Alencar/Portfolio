@@ -1,68 +1,34 @@
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel"
-import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { CarouselModal } from "./projects/carousel"
+import { ProjectItems } from "./projects/items"
+import { useState } from "react"
+import { Actived } from "@/types/activedType"
 
 export const Projects=  ()=>{
+    const [activedMenu,setActived] = useState('todos')
     return(
-        <div className="min-h-screen">
-            <Card >
-                <CardHeader>
-                    <CardTitle>
-                        Projetos
-                    </CardTitle>
-                    <CardContent className="p-0">
-                        <ul className="hidden md:flex gap-3">
-                            <li className="text-sm text-start">Todos</li>
-                            <li className="text-sm text-start">Landing Pages</li>
-                            <li className="text-sm text-start">API Requests</li>
-                            <li className="text-sm text-start">Forms</li>
-                        </ul>
-
-                        <Carousel className="pt-8 md:hidden">
-                            <CarouselContent>
-                                <CarouselItem className="flex justify-center">
-                                    <div className="h-48 w-full bg-blue-400"></div>
-                                </CarouselItem>
-                                <CarouselItem className="flex justify-center">
-                                    <div className="h-48 w-full bg-blue-400"></div>
-                                </CarouselItem>
-                                <CarouselItem className="flex justify-center">
-                                    <div className="h-48 w-full bg-blue-400"></div>
-                                </CarouselItem>
-                                <CarouselItem className="flex justify-center">
-                                    <div className="h-48 w-full bg-blue-400"></div>
-                                </CarouselItem>
-                            </CarouselContent>
-                            <CarouselPrevious/>
-                            <CarouselNext/>
-                        </Carousel>
-                    </CardContent>
-                    <CardFooter className="hidden md:flex">
-                        <Pagination>
-                            <PaginationContent>
-                                <PaginationItem>
-                                    <PaginationPrevious href="#"/>
-                                </PaginationItem>
-                                <PaginationItem>
-                                    <PaginationLink>1</PaginationLink>
-                                </PaginationItem>
-                                <PaginationItem>
-                                    <PaginationLink>2</PaginationLink>
-                                </PaginationItem>
-                                <PaginationItem>
-                                    <PaginationLink>3</PaginationLink>
-                                </PaginationItem>
-                                <PaginationItem>
-                                    <PaginationLink>4</PaginationLink>
-                                </PaginationItem>
-                                <PaginationItem>
-                                    <PaginationNext href="#"/>
-                                </PaginationItem>
-                            </PaginationContent>
-                        </Pagination>
-                    </CardFooter>
-                </CardHeader>
-            </Card>
+        <div className="min-h-screen flex flex-col justify-start" id="projects">
+            <div className=" md:mx-auto md:container m-2 ">
+                <Card className="bg-transparent  border-[#88c0d065] dark:border-[#88c0d022] shadow-2xl py-5 w-10/12 mx-auto" >
+                    <CardHeader className="flex flex-col gap-4">
+                        <CardTitle className="text-[#444e60] dark:text-white">
+                            Projetos
+                        </CardTitle>
+                        <ul className="hidden lg:flex gap-3 text-[#4C566A] dark:text-white">
+                                <li className={`text-sm cursor-pointer text-start ${activedMenu === 'todos' && 'actived'}`} onClick={()=>setActived('todos')}>Todos</li>
+                                <li className={`text-sm cursor-pointer text-start ${activedMenu === 'landing' && 'actived'}`} onClick={()=>setActived('landing')}>Landing Pages</li>
+                                <li className={`text-sm cursor-pointer text-start ${activedMenu === 'api' && 'actived'}`} onClick={()=>setActived('api')}>API Requests</li>
+                                <li className={`text-sm cursor-pointer text-start ${activedMenu === 'form' && 'actived'}`} onClick={()=>setActived('form')}>Forms</li>
+                            </ul>
+                        </CardHeader>
+                        <CardContent className="p-0 w-full overflow-hidden">
+                          
+                            <CarouselModal/>
+                            <ProjectItems actived={`${activedMenu}`}/>
+                        </CardContent>
+                        
+                </Card>
+            </div>
         </div>
     )
 }

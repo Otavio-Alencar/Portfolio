@@ -16,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={mainFontFamily.variable}>
-      <body >
+    <html lang="en" className={`${mainFontFamily.variable} scroll-smooth`}>
+      <body className="">
         <ThemeProvider
             attribute="class"
             defaultTheme="system"
