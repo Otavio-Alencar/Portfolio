@@ -3,13 +3,13 @@ import { ProjectsApi } from "@/components/projects/projectsAPI";
 export const CarouselModal = ()=>{
     return(
         <Carousel className=" lg:hidden">
-            <CarouselContent>
+            <CarouselContent className="">
                 {ProjectsApi.map((item,index)=>(
-                    <CarouselItem className="flex flex-col md:gap-10 items-center justify-center ">
+                    <CarouselItem className="flex flex-col gap-5 md:gap-10 items-center justify-center pb-10 ">
                     <div className="h-36 w-full flex items-center justify-center">
                         <img className=" w-full" src={item.img} alt="" />
                     </div>
-                    <div className="p-2 flex flex-col gap-3">
+                    <div className="p-2 flex flex-col gap-7">
                         <h1 className="text-2xl text-center">{item.title}</h1>
                         <p className="text-center text-xs">{item.description}</p>
                         <div className="flex mx-2 gap-2">

@@ -3,16 +3,17 @@ import { CarouselModal } from "./projects/carousel"
 import { ProjectItems } from "./projects/items"
 import { useState } from "react"
 import { Actived } from "@/types/activedType"
-
+import SwipeLeftIcon from '@mui/icons-material/SwipeLeft';
 export const Projects=  ()=>{
     const [activedMenu,setActived] = useState('todos')
     return(
         <div className="min-h-screen flex flex-col justify-start" id="projects">
-            <div className=" md:mx-auto md:container m-2 ">
-                <Card className="bg-transparent  border-[#88c0d065] dark:border-[#88c0d022] shadow-2xl py-5 w-10/12 mx-auto" >
+            <div className=" md:mx-auto md:container lg:m-2">
+                <Card className="bg-transparent  border-[#88c0d065] dark:border-[#88c0d022] shadow-2xl py-2 w-10/12 mx-auto my-10" >
                     <CardHeader className="flex flex-col gap-4">
-                        <CardTitle className="text-[#444e60] dark:text-white">
-                            Projetos
+                        <CardTitle className="text-[#444e60] dark:text-white flex justify-between">
+                            <p>Projetos</p>
+                            <SwipeLeftIcon className="animate-pulse lg:hidden"/>
                         </CardTitle>
                         <ul className="hidden lg:flex gap-3 text-[#4C566A] dark:text-white">
                                 <li className={`text-sm cursor-pointer text-start ${activedMenu === 'todos' && 'actived'}`} onClick={()=>setActived('todos')}>Todos</li>

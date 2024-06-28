@@ -5,7 +5,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import InfoIcon from '@mui/icons-material/Info';
 import CallIcon from '@mui/icons-material/Call';
-import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
+import { Link, animateScroll as scroll, scrollSpy } from 'react-scroll';
 export const Header = ()=>{
     return(
         <header className="fixed bg-white dark:bg-dark-color left-0 top-0 w-full z-50">
@@ -21,7 +21,7 @@ export const Header = ()=>{
                         <Link to='home' className="cursor-pointer"  spy={true} smooth={true} offset={50} duration={200}>Inicio</Link>
                         <Link to='projects' className="cursor-pointer"  spy={true} smooth={true} offset={-100} duration={500}>Projetos</Link>
                         <Link to='about' className="cursor-pointer"  spy={true} smooth={true} offset={50} duration={500}>Sobre mim</Link>
-                        <Link to='contact' className="cursor-pointer"   spy={true} smooth={true} offset={50} duration={500} >Contato</Link> 
+                        <Link to='contact' className="cursor-pointer"   spy={true} smooth={true} offset={-250} duration={500} >Contato</Link> 
                         <ModeToggle></ModeToggle>
                  </ul>
                 
@@ -38,20 +38,20 @@ export const Header = ()=>{
                                 <ul className='flex flex-col items-start justify-center gap-5'>
                                     <li className='flex items-center cursor-pointer bg-transparent gap-2 p-1 text-dark-color dark:text-white  '>    
                                     <HomeIcon/>
-                                    <p>Home</p>
+                                    <Link to='home' className="cursor-pointer"  spy={true} smooth={true} offset={-20} duration={200}>Inicio</Link>
                                     </li>
                                     <li className='flex items-center cursor-pointer bg-transparent p-1 text-dark-color dark:text-white gap-2 '>
                                         <AccountTreeIcon/>
-                                        <p>Projetos</p>
+                                        <Link to='projects' className="cursor-pointer"  spy={true} smooth={true} offset={-70} duration={500}>Projetos</Link>
                                         
                                         </li>
                                     <li className='flex items-center cursor-pointer bg-transparent p-1 gap-2 text-dark-color dark:text-white '>
                                         <InfoIcon/>
-                                        <p>Sobre Mim</p>
+                                        <Link to='about' className="cursor-pointer"  spy={true} smooth={true} offset={-50} duration={500}>Sobre mim</Link>
                                         </li>
                                     <li className='flex items-center cursor-pointer bg-transparent p-1 gap-2 text-dark-color dark:text-white '>
                                         <CallIcon/>
-                                        <p>Contato</p>
+                                        <Link to='contact' className="cursor-pointer"   spy={true} smooth={true} offset={-160} duration={500} >Contato</Link> 
                                         </li>
                                 </ul>
                             
