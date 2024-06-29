@@ -5,7 +5,7 @@ import { Home } from "@/components/Home"
 import { Header } from "@/components/header"
 import { Projects } from "@/components/projects"
 import { Technologies } from "@/components/technologies"
-export const Page = ()=>{
+const Page = ()=>{
   return(
     <div className="dark:bg-[#2e3440]">
     <Header/>
