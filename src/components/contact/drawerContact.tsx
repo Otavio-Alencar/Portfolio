@@ -5,7 +5,7 @@ import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { Textarea } from "../ui/textarea"
-import { GetEmail } from "@/api/email/send/routeSend"
+
 
 const formSchema = z.object({
     email: z.string().email('Coloque um email válido'),
@@ -16,8 +16,11 @@ export const DrawerContact = ({children}: {children:ReactNode})=>{
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
     })
-    function onSubmit(values:z.infer<typeof formSchema>){
-        GetEmail(values.email,values.text)
+    async function onSubmit(values:z.infer<typeof formSchema>){
+        await fetch('/api/email/send',{
+            method: 'POST',
+            body: JSON.stringify(values)
+        })
 
     }
     return(
@@ -61,7 +64,7 @@ export const DrawerContact = ({children}: {children:ReactNode})=>{
                             )}>
 
                         </FormField>
-                        <button type="submit" className="border border-light-color p-1 rounded-md">Enviar</button>
+                        <button disabled={form.formState.isSubmitting} type="submit" className="border border-light-color p-1 rounded-md">Enviar</button>
                     </form>
                 </Form>
             </DrawerContent>

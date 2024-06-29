@@ -4,7 +4,6 @@ import { DrawerContact } from "./contact/drawerContact"
 
 //
 export const Contact = ()=>{
-    const [hoverActive,setHoverActive] = useState(false)
     
     return(
         <div className="min-h-screen bg-white dark:bg-[#232731] flex flex-col justify-center items-center">
