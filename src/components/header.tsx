@@ -6,19 +6,30 @@ import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import InfoIcon from '@mui/icons-material/Info';
 import CallIcon from '@mui/icons-material/Call';
 import { Link, animateScroll as scroll, scrollSpy } from 'react-scroll';
+import { useLayoutEffect, useRef } from 'react';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+
+
+
 export const Header = ()=>{
+  
+    
+    
+    
     return(
-        <header className="fixed bg-white dark:bg-dark-color left-0 top-0 w-full z-50">
-            <div className="md:container mx-9 flex justify-between md:mx-auto py-7 items-center">
+        <header className="fixed bg-white dark:bg-dark-color left-0 top-0 w-full z-50 header headerContent  pb-7 pt-7">
+            <div className="md:container mx-9 flex justify-between md:mx-auto items-center ">
                 <div className="text-primary-color dark:text-white flex items-center gap-2">
                     <div className='h-[36px] w-[36px] flex '>
-                        <img src="/images/logo/logo-branca.png" className='hidden dark:flex' alt="" />
-                        <img src="/images/logo/logo-preta.png" className='dark:hidden' alt="" />
+                        <img src="/images/logo/logo-branca.png" className='hidden dark:flex ' alt="" />
+                        <img src="/images/logo/logo-preta.png" className='dark:hidden ' alt="" />
                     </div>
-                    <span>OalencarDev</span>
+                    <span className='logoName'>OalencarDev</span>
                 </div>
                 <ul className=" gap-8 text-primary-color dark:text-white hidden lg:flex items-center">
-                        <Link to='home' className="cursor-pointer"  spy={true} smooth={true} offset={50} duration={200}>Inicio</Link>
+                        <Link to='home' className="cursor-pointer"  spy={true} smooth={true} offset={0} duration={200}>Inicio</Link>
                         <Link to='projects' className="cursor-pointer"  spy={true} smooth={true} offset={-100} duration={500}>Projetos</Link>
                         <Link to='about' className="cursor-pointer"  spy={true} smooth={true} offset={50} duration={500}>Sobre mim</Link>
                         <Link to='contact' className="cursor-pointer"   spy={true} smooth={true} offset={-250} duration={500} >Contato</Link> 

@@ -1,6 +1,7 @@
 "use client"
 import { About } from "@/components/About"
 import { Contact } from "@/components/Contact"
+import { Footer } from "@/components/Footer"
 import { Home } from "@/components/Home"
 import { Header } from "@/components/header"
 import { Projects } from "@/components/projects"
@@ -22,6 +23,7 @@ const Page = ()=>{
       <Technologies/>
       <About/>
       <Contact/>
+      <Footer/>
     </div>
   )
 }

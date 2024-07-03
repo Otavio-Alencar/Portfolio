@@ -27,7 +27,7 @@ export const ProjectItems = ({actived}:Props)=>{
                         <img className=" h-full w-full" src={item.img}>
                         </img>
                     </div>
-                    <h1 className="font-medium text-md ml-2 text-[#444e60] dark:text-white">{item.title}</h1>
+                    <h1 className="font-normal text-sm ml-2 text-[#444e60] dark:text-white">{item.title}</h1>
                     </DialogTrigger>
                     <DialogContent className="flex dark:bg-dark-color h-[500px] max-w-[1000px] ">
                         <div className="flex-2 flex flex-col rounded-md overflow-hidden">
@@ -70,7 +70,7 @@ export const ProjectItems = ({actived}:Props)=>{
                         <img className=" h-full w-full" src={item.img}>
                         </img>
                     </div>
-                    <h1 className="font-medium text-md ml-2">{item.title}</h1>
+                    <h1 className="font-medium text-sm ml-2">{item.title}</h1>
                     </DialogTrigger>
                     <DialogContent className="flex dark:bg-dark-color h-[500px] max-w-[1000px] ">
                         <div className="flex-2 flex flex-col rounded-md overflow-hidden">
@@ -108,7 +108,7 @@ export const ProjectItems = ({actived}:Props)=>{
                         <img className=" h-full w-full" src={item.img}>
                         </img>
                     </div>
-                    <h1 className="font-medium text-md ml-2">{item.title}</h1>
+                    <h1 className="font-medium text-sm ml-2">{item.title}</h1>
                     </DialogTrigger>
                     <DialogContent className="flex dark:bg-dark-color h-[500px] max-w-[1000px] ">
                         <div className="flex-2 flex flex-col rounded-md overflow-hidden">
@@ -146,7 +146,7 @@ export const ProjectItems = ({actived}:Props)=>{
                         <img className=" h-full w-full" src={item.img}>
                         </img>
                     </div>
-                    <h1 className="font-medium text-md ml-2">{item.title}</h1>
+                    <h1 className="font-medium text-sm ml-2">{item.title}</h1>
                     </DialogTrigger>
                     <DialogContent className="flex dark:bg-dark-color h-[500px] max-w-[1000px] ">
                         <div className="flex-2 flex flex-col rounded-md overflow-hidden">
