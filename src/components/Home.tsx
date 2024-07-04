@@ -5,54 +5,6 @@ import { Link, animateScroll as scroll, scrollSpy } from 'react-scroll';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 export const Home = ()=>{ 
-    const el = useRef(null)
-    const tl = useRef<gsap.core.Timeline | null>(null)
-    useLayoutEffect(()=>{
-        gsap.registerPlugin(ScrollTrigger)
-        const ctx = gsap.context(()=>{
-            tl.current = gsap.timeline({
-                scrollTrigger:{
-                    trigger:".models-item",
-                    endTrigger: '#title',
-                    markers: true,
-                    scrub:true,
-                    start: "top 500px",
-                    end: "bottom 600px"
-
-
-                }
-            })
-            .fromTo(".model-1",{
-                opacity:0,
-                y:90
-            },{
-                opacity:1,
-                y:0,
-                ease: 'power1.inOut'
-            })
-            .fromTo("#model-2",{
-                opacity:0,
-                y:120,
-                ease: 'power1.inOut'
-            },{
-                opacity:1,
-                y:0
-            })
-            .fromTo("#model-3",{
-                opacity:0,
-                y:150,
-                ease: 'power1.inOut',
-
-            },{
-                opacity:1,
-                y:0,
-            })
-        },el)
-
-        return ()=>{
-            gsap.killTweensOf('.models-item')
-        }
-    },[])
     return(
         <div  className="h-[100vh]  flex justify-center lg:justify-between items-center bg-white dark:bg-dark-color mx-9 lg:mx-auto md:container ">
             <div id="home" className="lg:w-1/2 flex flex-col gap-7 ">
